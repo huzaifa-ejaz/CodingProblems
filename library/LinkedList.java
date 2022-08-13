@@ -1,5 +1,7 @@
 package library;
 
+import sun.awt.image.ImageWatched;
+
 public class LinkedList {
     public LinkedListNode head;
     public int size;
@@ -7,6 +9,13 @@ public class LinkedList {
     public LinkedList() {
         this.head = null;
         this.size = 0;
+    }
+
+    public LinkedList(LinkedListNode head) {
+        if( head != null) {
+            this.head = head;
+            this.size = getSizeTillLastNode(this.head);
+        }
     }
 
     public void add(int data) {
@@ -21,6 +30,18 @@ public class LinkedList {
             current.next = new LinkedListNode(data);
         }
         size++;
+    }
+
+    public int getSizeTillLastNode(LinkedListNode node) {
+        int count = 0;
+
+        LinkedListNode current = node;
+        while(current != null) {
+            count++;
+            current = current.next;
+        }
+
+        return count;
     }
 
     public void print() {
