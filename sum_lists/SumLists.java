@@ -4,6 +4,10 @@ import library.LinkedList;
 import library.LinkedListNode;
 
 public class SumLists {
+    /* Problem: Add two list containing the digits in their nodes giving a list of sum as output
+       Input: 9->7->8 + 6->8->5
+       Output: 1->6->6->3
+     */
     public static LinkedList addPlaceholderZeroes(LinkedList list, int places) {
         for(int i = 0; i < places; i++) {
             LinkedListNode placeholder = new LinkedListNode();
