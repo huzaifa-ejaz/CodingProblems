@@ -19,17 +19,22 @@ public class LinkedList {
     }
 
     public void add(int data) {
+        LinkedListNode newNode = new LinkedListNode(data);
+        appendNode(newNode);
+        size++;
+    }
+
+    public void appendNode(LinkedListNode node) {
         if(this.head == null) {
-            head = new LinkedListNode(data);
+            head = node;
         }
         else {
             LinkedListNode current = head;
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = new LinkedListNode(data);
+            current.next = node;
         }
-        size++;
     }
 
     public int getSizeTillLastNode(LinkedListNode node) {
